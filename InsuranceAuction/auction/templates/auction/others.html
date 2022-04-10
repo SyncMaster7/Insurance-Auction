@@ -1,0 +1,27 @@
+{% extends "auction/base.html" %}
+
+{% block content %}
+
+<table class="table">
+    <thead class="table-dark">
+    <tr>
+        <th>Picture</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Notes</th>
+    </tr>
+
+    {% for o in others %}
+
+    <tr>
+        <td>{{ o.image|default_if_none:"No value" }}</td>
+        <td>{{ o.type }}</td>
+        <td>{{ o.status }}</td>
+        <td>{{ o.notes }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}
